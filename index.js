@@ -152,19 +152,6 @@ app.get("/myImport", async (req, res) => {
 });
 
 // DELETE: Remove imported product by ID
-app.delete("/myImport/:id", async (req, res) => {
-  try {
-    const id = req.params.id;
-
-    const result = await myImportCollection.deleteOne({
-      _id: new ObjectId(id),
-    });
-
-    res.send(result);
-  } catch (error) {
-    res.status(500).send({ message: "Failed to delete import", error });
-  }
-});
 
 
 
